@@ -1,4 +1,5 @@
-﻿
+﻿@model VinylShop.Models.Customer
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,3 +8,23 @@
 <h2>Index</h2>
 
 This is our Cart
+
+<dt>
+    Purchased Vinyls:
+</dt>
+<dd>
+    <table class="table table-bordered">
+
+        @foreach (var vinyl in Model.Vinyls)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => vinyl.Title)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "DeleteFromCart", new { customerId = Model.ID, vinylId = vinyl.ID })
+                </td>
+            </tr>
+        }
+    </table>
+</dd>
