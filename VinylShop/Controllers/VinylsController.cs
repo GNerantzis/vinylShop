@@ -18,7 +18,6 @@ namespace VinylShop.Controllers
         public ActionResult Index()
         {
             return View(db.Vinyls.ToList());
-
         }
 
         // GET: Vinyls/Details/5
@@ -84,7 +83,7 @@ namespace VinylShop.Controllers
 
             customer.Vinyls.Add(vinyl);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","myCart");
         }
 
 

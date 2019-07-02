@@ -171,25 +171,18 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\myCartController.cs" />
     <Compile Include="Controllers\VinylsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906281533503_dontKnow.cs" />
-    <Compile Include="Migrations\201906281533503_dontKnow.Designer.cs">
-      <DependentUpon>201906281533503_dontKnow.cs</DependentUpon>
+    <Compile Include="Migrations\201907021223343_addedCart.cs" />
+    <Compile Include="Migrations\201907021223343_addedCart.Designer.cs">
+      <DependentUpon>201907021223343_addedCart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201906281547292_customerView.cs" />
-    <Compile Include="Migrations\201906281547292_customerView.Designer.cs">
-      <DependentUpon>201906281547292_customerView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906281618407_cartUpdate.cs" />
-    <Compile Include="Migrations\201906281618407_cartUpdate.Designer.cs">
-      <DependentUpon>201906281618407_cartUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906281728149_noIdea.cs" />
-    <Compile Include="Migrations\201906281728149_noIdea.Designer.cs">
-      <DependentUpon>201906281728149_noIdea.cs</DependentUpon>
+    <Compile Include="Migrations\201907021224293_SeedDatabase.cs" />
+    <Compile Include="Migrations\201907021224293_SeedDatabase.Designer.cs">
+      <DependentUpon>201907021224293_SeedDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -298,6 +291,7 @@
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Vinyls\ToCart.cshtml" />
+    <Content Include="Views\myCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -316,17 +310,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906281533503_dontKnow.resx">
-      <DependentUpon>201906281533503_dontKnow.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907021223343_addedCart.resx">
+      <DependentUpon>201907021223343_addedCart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906281547292_customerView.resx">
-      <DependentUpon>201906281547292_customerView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906281618407_cartUpdate.resx">
-      <DependentUpon>201906281618407_cartUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906281728149_noIdea.resx">
-      <DependentUpon>201906281728149_noIdea.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907021224293_SeedDatabase.resx">
+      <DependentUpon>201907021224293_SeedDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

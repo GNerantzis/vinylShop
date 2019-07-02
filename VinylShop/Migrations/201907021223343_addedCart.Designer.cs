@@ -7,13 +7,13 @@ namespace VinylShop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class cartUpdate : IMigrationMetadata
+    public sealed partial class addedCart : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(cartUpdate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addedCart));
         
         string IMigrationMetadata.Id
         {
-            get { return "201906281618407_cartUpdate"; }
+            get { return "201907021223343_addedCart"; }
         }
         
         string IMigrationMetadata.Source

@@ -7,13 +7,13 @@ namespace VinylShop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class dontKnow : IMigrationMetadata
+    public sealed partial class SeedDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(dontKnow));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SeedDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201906281533503_dontKnow"; }
+            get { return "201907021224293_SeedDatabase"; }
         }
         
         string IMigrationMetadata.Source
