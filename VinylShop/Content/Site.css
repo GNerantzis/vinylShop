@@ -1,13 +1,56 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 20px;
+    background-color: orange;
+    color:black;
 }
 
 /* Set padding to keep content from hitting the edges */
+
 .body-content {
-    padding-left: 15px;
+    padding-left: 30px;
     padding-right: 15px;
 }
+
+.jumbotron {
+    background-color: cadetblue;
+    text-align: center;
+}
+
+.jumbotron h1{
+    font-size:4rem;
+    color:white;
+}
+
+.lead{
+    color:rebeccapurple;
+}
+
+/* Portfolio */
+.portfolio {
+    margin: 1rem;
+    background-color: purple;
+    display: inline-block;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit);
+    padding: 2rem;
+    padding-top: 2rem;
+    width: grid;
+    box-shadow: var(--shadow);
+}
+
+
+    .portfolio img {
+        border: 5px solid white;
+        object-fit: cover;
+    }
+
+        .portfolio img:hover {
+            border: 5px solid white;
+            -webkit-filter: hue-rotate(90deg);
+            filter: hue-rotate(90deg);
+        }
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -16,9 +59,16 @@
     white-space: normal;
 }
 
+.row {
+    background-color: greenyellow;
+    padding:10px;
+    border:10px;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
 }
+

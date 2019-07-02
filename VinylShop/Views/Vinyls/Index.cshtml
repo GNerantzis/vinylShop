@@ -1,0 +1,92 @@
+﻿@model IEnumerable<VinylShop.Models.Vinyl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Vinyls</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Album Cover
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Artist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Label)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>Audio Demo</th>
+        <th>To Cart</th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+    <tr>
+        <td>
+            <img src="/Photos/@item.image" height="100" alt="Album Cover" />
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Artist)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Label)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            <audio controls class="audioPlayer">
+                <source src="~/Audio/@item.audioclip" type="audio/ogg">
+                Your browser does not support the audio tag.
+            </audio>
+        </td>
+        
+        <td>
+            @Html.ActionLink("Add", "ToCart", new { id = item.ID })
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+
+        </td>
+
+
+    </tr>
+
+
+    }
+
+</table>

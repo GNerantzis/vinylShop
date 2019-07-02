@@ -168,14 +168,38 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\VinylsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906281533503_dontKnow.cs" />
+    <Compile Include="Migrations\201906281533503_dontKnow.Designer.cs">
+      <DependentUpon>201906281533503_dontKnow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906281547292_customerView.cs" />
+    <Compile Include="Migrations\201906281547292_customerView.Designer.cs">
+      <DependentUpon>201906281547292_customerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906281618407_cartUpdate.cs" />
+    <Compile Include="Migrations\201906281618407_cartUpdate.Designer.cs">
+      <DependentUpon>201906281618407_cartUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906281728149_noIdea.cs" />
+    <Compile Include="Migrations\201906281728149_noIdea.Designer.cs">
+      <DependentUpon>201906281728149_noIdea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerVinylViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Vinyl.cs" />
+    <Compile Include="Models\VinylShopDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -184,12 +208,25 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\jplayer.blue.monday.css" />
+    <Content Include="css\libs\variable.css" />
+    <Content Include="css\main.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\album.jpg" />
+    <Content Include="img\arrow.svg" />
+    <Content Include="img\pause.svg" />
+    <Content Include="img\play.svg" />
+    <Content Include="img\sprite.svg" />
+    <Content Include="Photos\apdc.png" />
+    <Content Include="Photos\banner.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="img\º»º+ ºßºaº+ºSº+º+ºGº+º+º+º¯ 566217.crdownload" />
+    <Content Include="img\º»º+ ºßºaº+ºSº+º+ºGº+º+º+º¯ 679893.crdownload" />
+    <Content Include="Audio\1.ogg" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -200,7 +237,19 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="src\img\album.jpg" />
+    <Content Include="src\img\arrow.svg" />
+    <Content Include="src\img\pause.svg" />
+    <Content Include="src\img\play.svg" />
+    <Content Include="src\index.html" />
+    <Content Include="src\js\main.js" />
+    <Content Include="src\scss\libs\variable.css" />
+    <Content Include="src\template\footer.html" />
+    <Content Include="src\template\header.html" />
+    <Content Include="Views\Vinyls\album-1.jpg" />
+    <Content Include="Views\Vinyls\album-2.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -235,6 +284,20 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Vinyls\Create.cshtml" />
+    <Content Include="Views\Vinyls\Delete.cshtml" />
+    <Content Include="Views\Vinyls\Details.cshtml" />
+    <Content Include="Views\Vinyls\Edit.cshtml" />
+    <Content Include="Views\Vinyls\Index.cshtml" />
+    <Content Include="src\scss\main.scss" />
+    <Content Include="src\scss\_mixins.scss" />
+    <Content Include="Views\Customers.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Vinyls\ToCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +314,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906281533503_dontKnow.resx">
+      <DependentUpon>201906281533503_dontKnow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906281547292_customerView.resx">
+      <DependentUpon>201906281547292_customerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906281618407_cartUpdate.resx">
+      <DependentUpon>201906281618407_cartUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906281728149_noIdea.resx">
+      <DependentUpon>201906281728149_noIdea.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,49 @@
+﻿@model VinylShop.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+
+
+<dt>
+    Purchased Vinyls:
+</dt>
+<dd>
+    <table class="table table-bordered">
+
+        @foreach (var vinyl in Model.Vinyls)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => vinyl.Title)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "DeleteFromCart", new { customerId = Model.ID, vinylId = vinyl.ID })
+                </td>
+            </tr>
+        }
+    </table>
+</dd>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

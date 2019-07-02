@@ -1,0 +1,17 @@
+NASVIL PROJECT:
+
+Team Log:
+
+31-05-2019:
+
+-Created Vinyl Shop MVC Project with Individual Authentication
+-Created Banner in Photoshop
+-Created Vinyl Model Class
+-Created Vinyls Controller with Framework Scaffolding
+-Enabled Migrations
+-Changed WebConfig connectionString
+-Created VinylShopDBContext Model Class
+-Added Vinyls Button in Views/Shared/_Layout.cshtml and tweaked footer and navbar-header
+-Added content to Views/Home/Index.cstmhl
+
+
